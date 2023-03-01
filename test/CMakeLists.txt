@@ -142,6 +142,19 @@ endif()
 )
 #endif()
 
+########################## MultiLevel Tests
+   add_test(
+           test_multilevel
+           1
+           core/multilayer/MultiLayerParserTest.cpp
+           NGen::core
+           NGen::geojson
+           NGen::realizations_catchment
+           NGen::core_mediator
+           NGen::forcing
+)
+
+
 ########################## BMI C++ Tests
 add_test(
         test_bmi_cpp
@@ -347,7 +360,7 @@ add_test(
 # All automated tests
 add_test(
         test_all
-        16
+        17
         geojson/JSONProperty_Test.cpp
         geojson/JSONGeometry_Test.cpp
         geojson/Feature_Test.cpp
@@ -359,6 +372,7 @@ add_test(
         core/mediator/UnitsHelper_Tests.cpp
         realizations/Formulation_Manager_Test.cpp
         core/nexus/NexusTests.cpp
+        core/multilayer/MultiLayerParserTest.cpp
         utils/Partition_Test.cpp
         utils/mdarray_Test.cpp
         utils/mdframe_Test.cpp
